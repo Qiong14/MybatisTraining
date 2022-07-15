@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--xml命名空间。必须是接口的全路径，实现与接口的链接-->
+<mapper namespace="com.qiong.mapper.FlowerMapper">
+
+    <!--
+        定义一种操作
+        select: 代表查询操作
+        id： 给方法起名
+        resultTyp：返回值类型（如果返回集合则是集合的泛型）。默认类型已经定义好了（查看mybatis API）
+        parameterType： 例如根据年龄查询，则参数类型为int，可以省略
+    -->
+
+    <!--id中的名称必须与借口中的方法名保持一致-->
+    <select id="selectAll" resultType="flower">
+        select * from flower
+    </select>
+
+    <select id="selectOne" resultType="flower">
+        select * from flower where sno = #{param1}
+    </select>
+
+
+    <select id="selectMore" resultType="flower">
+        select * from flower where sno = #{param1} and name = #{param2}
+    </select>
+
+    <select id="selectMore2" resultType="flower">
+        select * from flower where sno = #{sno} and name = #{name}
+    </select>
+
+    <select id="selectMore3" resultType="flower">
+        select * from flower where sno = #{sno} and name = #{name}
+    </select>
+
+    <select id="selectMore4" resultType="flower">
+        select * from flower where sno = #{param1.sno} and name = #{param2.name}
+    </select>
+
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--将连接数据库的四个元素配置到属性文件中。于此声明-->
+    <properties resource="jdbc.properties"></properties>
+
+    <!--可进行设置，如此处设置日志类型-->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+
+    <typeAliases>
+        <!--给单个类起别名，方便sql命令中调用-->
+        <!--<typeAlias type="com.qiong.pojo.Flower" alias="flower"></typeAlias>-->
+        <!--给整个包下的类起别名，别名等于类名，不区分大小写-->
+        <package name="com.qiong.pojo"/>
+    </typeAliases>
+
+
+    <!--配置mybatis中数据库连接环境-->
+    <environments default="mysql">
+        <environment id="mysql">
+            <!--配置mybatis中的事物 和JDBC中失事物保持一致。事务管理器（transactionManager）。配合Spring使用可以不需要-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置连接数据库的四个元素，底层采用的是数据库连接池的方式。有三种：UNPOOLED POOLED JNDI-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${s_driver}"/>
+                <property name="url" value="${s_url}"/>
+                <property name="username" value="${s_username}"/>
+                <property name="password" value="${s_password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--扫描映射器，有四种方式-->
+    <mappers>
+        <!--<mapper resource="com/qiong/mapper/FlowerMapper.xml"></mapper>
+        <mapper resource="com/qiong/mapper/FlowerMapper2.xml"></mapper>-->
+        <!--<mapper url="file:///D:/XXX.xml"></mapper>-->
+        <!--直接扫描包。首先找包下所有的接口，再根据接口名称去匹配一致的xml文件进行扫描（接口名与xml名须一致）-->
+        <package name="com.qiong.mapper"/>
+    </mappers>
+</configuration>
