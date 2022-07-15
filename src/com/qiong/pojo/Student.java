@@ -1,6 +1,6 @@
 package com.qiong.pojo;
 
-public class Flower {
+public class Student {
 
     int sno;
     String name;
@@ -9,7 +9,7 @@ public class Flower {
     String classname;
     String email;
 
-    public Flower(int sno, String name, String sex, String enterdate, String classname, String email) {
+    public Student(int sno, String name, String sex, String enterdate, String classname, String email) {
         this.sno = sno;
         this.name = name;
         this.sex = sex;
@@ -18,7 +18,7 @@ public class Flower {
         this.email = email;
     }
 
-    public Flower() {
+    public Student() {
     }
 
     public int getSno() {
@@ -71,7 +71,7 @@ public class Flower {
 
     @Override
     public String toString() {
-        return "Flower{" +
+        return "Student{" +
                 "sno=" + sno +
                 ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +

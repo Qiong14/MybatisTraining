@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--xml命名空间。必须是接口的全路径，实现与接口的链接-->
-<mapper namespace="com.qiong.mapper.FlowerMapper">
+<mapper namespace="com.qiong.mapper.StudentMapper">
 
     <!--
         定义一种操作
@@ -15,29 +15,29 @@
     -->
 
     <!--id中的名称必须与借口中的方法名保持一致-->
-    <select id="selectAll" resultType="flower">
-        select * from flower
+    <select id="selectAll" resultType="student">
+        select * from student
     </select>
 
-    <select id="selectOne" resultType="flower">
-        select * from flower where sno = #{param1}
+    <select id="selectOne" resultType="student">
+        select * from student where sno = #{param1}
     </select>
 
 
-    <select id="selectMore" resultType="flower">
-        select * from flower where sno = #{param1} and name = #{param2}
+    <select id="selectMore" resultType="student">
+        select * from student where sno = #{param1} and name = #{param2}
     </select>
 
-    <select id="selectMore2" resultType="flower">
-        select * from flower where sno = #{sno} and name = #{name}
+    <select id="selectMore2" resultType="student">
+        select * from student where sno = #{sno} and name = #{name}
     </select>
 
-    <select id="selectMore3" resultType="flower">
-        select * from flower where sno = #{sno} and name = #{name}
+    <select id="selectMore3" resultType="student">
+        select * from student where sno = #{sno} and name = #{name}
     </select>
 
-    <select id="selectMore4" resultType="flower">
-        select * from flower where sno = #{param1.sno} and name = #{param2.name}
+    <select id="selectMore4" resultType="student">
+        select * from student where sno = #{param1.sno} and name = #{param2.name}
     </select>
 
 </mapper>

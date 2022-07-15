@@ -1,8 +1,7 @@
 package com.qiong.test;
 
-import com.qiong.mapper.FlowerMapper;
-import com.qiong.mapper.FlowerMapper2;
-import com.qiong.pojo.Flower;
+import com.qiong.mapper.StudentMapper2;
+import com.qiong.pojo.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,7 +9,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 public class TestB {
     public static void main(String[] args) throws IOException {
@@ -25,10 +23,10 @@ public class TestB {
         SqlSession sqlSession = factory.openSession();
 
         /*4. 执行sql语句的指定方法*/
-        FlowerMapper2 flowerMapper = sqlSession.getMapper(FlowerMapper2.class);
+        StudentMapper2 studentMapper = sqlSession.getMapper(StudentMapper2.class);
 
-        Flower f = new Flower(1, "chen", "m", "2020-01-01", "first", "XXXgmail.com");
-        flowerMapper.insert(f);
+        Student s = new Student(1, "chen", "m", "2020-01-01", "first", "XXXgmail.com");
+        studentMapper.insert(s);
         sqlSession.commit();
 
 

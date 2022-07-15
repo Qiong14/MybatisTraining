@@ -4,12 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--xml命名空间。必须是接口的全路径，实现与接口的链接-->
-<mapper namespace="com.qiong.mapper.FlowerMapper3">
+<mapper namespace="com.qiong.mapper.StudentMapper3">
 
 
-    <select id="selectMore" resultType="flower">
+    <select id="selectMore" resultType="student">
 
-        select * from flower where 1=1
+        select * from student where 1=1
 
         <if test="param1!=null and param1!=''">
             and name =#{param1}
@@ -22,9 +22,9 @@
     </select>
 
     <!--where标签，自动添加where关键字，去掉第一个and-->
-    <select id="selectMore2" resultType="flower">
+    <select id="selectMore2" resultType="student">
 
-        select * from flower
+        select * from student
 
         <where>
             <if test="param1!=null and param1!=''">
@@ -39,9 +39,9 @@
     </select>
 
     <!--choose标签-->
-    <select id="selectMore3" resultType="flower">
+    <select id="selectMore3" resultType="student">
 
-        select * from flower
+        select * from student
 
         <where>
             <choose>

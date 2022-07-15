@@ -1,9 +1,7 @@
 package com.qiong.test;
 
-import com.qiong.mapper.FlowerMapper;
-import com.qiong.mapper.FlowerMapper2;
-import com.qiong.mapper.FlowerMapper3;
-import com.qiong.pojo.Flower;
+import com.qiong.mapper.StudentMapper3;
+import com.qiong.pojo.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -26,9 +24,9 @@ public class TestC {
         SqlSession sqlSession = factory.openSession();
 
         /*4. 执行sql语句的指定方法*/
-        FlowerMapper3 flowerMapper = sqlSession.getMapper(FlowerMapper3.class);
+        StudentMapper3 studentMapper = sqlSession.getMapper(StudentMapper3.class);
 
-        List<Flower> list = flowerMapper.selectMore("123","");
+        List<Student> list = studentMapper.selectMore("123","");
 
         sqlSession.commit();
 

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--xml命名空间-->
-<mapper namespace="com.qiong.mapper.FlowerMapper2">
+<mapper namespace="com.qiong.mapper.StudentMapper2">
 
     <!--
         定义一种操作
@@ -14,11 +14,11 @@
         parameterType： 例如根据年龄查询，则参数类型为int，可以省略
     -->
     <!--<insert id="insert">
-        insert into flower values(#{sno}, #{name}, #{sex}, #{enterdate}, #{classname}, #{email})
+        insert into student values(#{sno}, #{name}, #{sex}, #{enterdate}, #{classname}, #{email})
     </insert>-->
      <!--实现主键自增，但无法保证线程安全-->
     <insert id="insert" useGeneratedKeys="true" keyColumn="sno">
-        insert into flower values(#{sno}, #{name}, #{sex}, #{enterdate}, #{classname}, #{email})
+        insert into student values(#{sno}, #{name}, #{sex}, #{enterdate}, #{classname}, #{email})
     </insert>
 
     <!--同上，适合多线程-->
@@ -26,15 +26,15 @@
         <selectKey order = "AFTER" keyProperty="sno" resultType="int">
             select @@identity
         </selectKey>
-        insert into flower values(#{sno}, #{name}, #{sex}, #{enterdate}, #{classname}, #{email})
+        insert into student values(#{sno}, #{name}, #{sex}, #{enterdate}, #{classname}, #{email})
     </insert>
 
     <update id="updateName">
-        update flower set enterdate = #{enterdate} where sno = #{sno}
+        update student set enterdate = #{enterdate} where sno = #{sno}
     </update>
 
     <delete id="delete">
-        delete from flower where sno = #{param1}
+        delete from student where sno = #{param1}
     </delete>
 
 </mapper>
