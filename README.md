@@ -1,2 +1,2 @@
 # MybatisTraining
-Mybatis Training
+Connecting database using Mybatis
