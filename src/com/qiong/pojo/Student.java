@@ -3,11 +3,11 @@ package com.qiong.pojo;
 public class Student {
 
     int sno;
-    String name;
-    String sex;
-    String enterdate;
-    String classname;
-    String email;
+    private String name;
+    private String sex;
+    private String enterdate;
+    private String classname;
+    private String email;
 
     public Student(int sno, String name, String sex, String enterdate, String classname, String email) {
         this.sno = sno;
